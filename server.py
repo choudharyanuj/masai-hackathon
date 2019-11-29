@@ -20,7 +20,7 @@ def write_users_csv(user_data):
         writer = csv.DictWriter(csvfile, fieldnames = fieldnames)
         writer.writeheader()
         for j in range(len(user_data)):
-            writer.writerow({'id': user_data[j]["id"],'name': user_data[j]["name"],'email':user_data[j]["email"],'user_name':user_data[j]["user_name"],"password":user_data[j]["password"],'gender':user_data[j]["gender"],'language':user_data[j]["language"]})
+            writer.writerow({'id': user_data[j]["id"],"name": user_data[j]["name"],'email':user_data[j]["email"],'user_name':user_data[j]["user_name"],"password":user_data[j]["password"],'gender':user_data[j]["gender"],'language':user_data[j]["language"]})
     
 # @app.route('/home')
 # def show_users():
@@ -76,9 +76,9 @@ def edit_user(id):
     language = request.json["language"]
     for i in range(len(user_list)):
         if int(user_list[i]["id"]) == id:
-            arr.append({"id":id,"user_name":user_name,"email":email,"password":password,"language":language})
+            arr.append({"id":id,"name":user_list[i]["name"],"user_name":user_name,"email":email,"password":password,"gender":user_list[i]["gender"],"language":language})
         else:
-            arr.append({"id":user_list[i]["id"],"name":user_list[i]["name"],"email":user_list[i]["email"],"user_name":user_list[i]["user_name"],"gender":user_list[i]["gender"],"language":user_list[i]["language"]})
+            arr.append({"id":user_list[i]["id"],"name":user_list[i]["name"],"email":user_list[i]["email"],"user_name":user_list[i]["user_name"],"password":user_list[i]["password"],"gender":user_list[i]["gender"],"language":user_list[i]["language"]})
     write_users_csv(arr)
     return json.dumps("Details Modified Successfully")
 
