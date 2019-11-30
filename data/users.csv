@@ -1,2 +1,7 @@
-id,name,user_name,email,password,gender,language
-1,test,test2,abc@xyz.com,MASAI124,Male,English
+id,name,user_name,email,password,gender,skill1,skill2,skill3
+1,Sarvagya,Ma,sarvagya@masai.com,Masai_Test,Male,HTML,CSS,JavaScript
+2,Suraj,Ma,suraj@masai.com,1234,Male,Bootstrap,React,Python
+3,Suraj,school,suraj@masai.com,12345,Feale,Bootstrap,React,Python
+4,Surajjha,school,suraj@masai.com,12345,Feale,Bootstrap,React,Python
+5,Nrupu Dev,NrupulD,nrupul@masai.com,123456,male,CSS,Bootstrap,JavaScript
+6,Prateek,prateekCEO,prateek@masai.com,123456,male,React,Python,Flask
