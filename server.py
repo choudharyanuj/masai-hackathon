@@ -62,10 +62,7 @@ def login():
     for i in user_data:
         if i["email"] == str(email) and i["password"] == str(password):
             user_details.append({"id": i["id"], "name": i["name"],"email":i["email"], "user_name": i["user_name"],"gender":i["gender"],"skill1":i["skill1"],"skill2":i['skill2'],'skill3':i["skill3"]})
-            response = user_details
-        else:
-            response = "Please Enter Valid Login Id and Password"
-    return json.dumps(response)
+    return json.dumps(user_details)
 
 @app.route('/edit/<int:id>', methods=['POST'])
 def edit_user(id):
@@ -77,7 +74,7 @@ def edit_user(id):
     password = request.json["password"]
     skill1 = request.json["skill1"]
     skill2 = request.json['skill2']
-    skill3 = request,josn['skill3']
+    skill3 = request.josn['skill3']
     for i in range(len(user_list)):
         if int(user_list[i]["id"]) == id:
             arr.append({"id":id,"name":user_list[i]["name"],"user_name":user_name,"email":email,"password":password,"gender":user_list[i]["gender"],"skill1":skill1,'skill2':skill2,'skill3':skill3})
@@ -86,15 +83,5 @@ def edit_user(id):
     write_users_csv(arr)
     return json.dumps("Details Modified Successfully")
 
-# @app.route('/delete/<int:id>', methods=['POST'])        
-# def delete_user(id):
-#     user_list = list()
-#     user_list = read_users_csv()
-#     arr = list()
-#     for i in range(len(user_list)):
-#         if int(user_list[i]["id"]) != id:
-#             arr.append({"id":user_list[i]["id"],"name":user_list[i]["name"],"mobile":user_list[i]["mobile"],"email":user_list[i]["email"]})
-#     write_users_csv(arr)
-#     return json.dumps("User Deleted Successfully")
 if __name__ == "__main__":
     app.run(debug = True)
