@@ -7,6 +7,8 @@ export default class Home extends Component {
         return (
             <div>
                 <Navigation/>
+                
+                
                 <div className="m-2">
                     <Carousel className="m-3">
                         <Carousel.Item>
