@@ -8,6 +8,8 @@ export default class Home extends Component {
         return (
             <div>
                 <Navigation/>
+                
+                
                 <div className="m-2">
                     <Carousel className="m-3">
                         <Carousel.Item>
@@ -23,9 +25,11 @@ export default class Home extends Component {
                         </Carousel.Item>
                     </Carousel>
                  </div>
-                 <div className="jumbotron ml-4 mr-4" style={{background: "linear-gradient(#b92b27, #1565C0)"}}>
-                    <h6>WHAT WE BELIEVE IN</h6>
-                    <h2>"A Company is much more than a set of features or products. It is a way of building and solving problems."</h2>
+                 <div className="jumbotron ml-4 mr-4 text-tight" style={{background: "linear-gradient(#b92b27, #1565C0)"}}>
+                     <center>
+                        <h1 className="text-light">WHY Clan of Coder?</h1>
+                        <h2 className="text-light">"Everyone out there don't know each and every thing in tech world so they need to clear their doubt. And for that COC is a perfect platform"</h2>
+                    </center>
                  </div>
                  <div className="jumbotron text-light ml-4 mr-4" style={{background: "linear-gradient(#b92b27, #1565C0)"}}>
                     <div className="row">
@@ -50,8 +54,10 @@ export default class Home extends Component {
                     </div>
                  </div>
                  <div style={{backgroundColor:"black"}} className="text-light ml-4 mr-4">
-                    <h1>It takes a world-class team to build a world-class product.</h1>
-                    <Link to="/login"><button className="btn btn-success">Join Us</button></Link>
+                     <center>
+                        <h1>It takes a world-class team to build a world-class product.</h1>
+                        <Link to="/login"><button className="btn btn-success">Join Us</button></Link>
+                    </center>
                  </div>
             </div>
         )

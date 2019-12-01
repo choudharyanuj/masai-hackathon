@@ -7,3 +7,8 @@ id,name,user_name,email,password,gender,skill1,skill2,skill3
 6,Prateek,prateekCEO,prateek@masai.com,123456,male,React,Python,Flask
 7,Full Name,FullName,full@masai.com,123456,male,ES6,Python,Flask
 8,Yogessh Bhatt,Yogesh,yogesh@masai.com,123456,male,Flask,SQL,ES6
+9,Piyush,pihu,piyush@masai.com,123456,male,HTML,JavaScript,ES6
+10,test,testuser,test@gmail.com,123456,male,HTML,CSS,JavaScript
+11,Amit,amit98,amit@masai.com,12346,male,JavaScript,ES6,Redux
+12,ASAD,asad_,asad@gmail.com,12345,male,HTML,CSS,JavaScript
+13,somya,somya_,somya@gmail.com,12345,male,HTML,CSS,JavaScript

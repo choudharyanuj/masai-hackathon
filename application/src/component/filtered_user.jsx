@@ -20,18 +20,25 @@ export default class FilteredUser extends Component {
         e.preventDefault()
         var editItemDetails = {
            skill:this.state.skill
-
         }
         Axios.post("http://127.0.0.1:5000/news_feed",editItemDetails)
             .then((response) => {
-                // alert("Edited Successfuully")
-                // console.log(response.data)
                 this.setState({
                     arr:response.data
                 })
                 console.log(this.state.arr)
             })
             .catch((err) => alert(err))
+    }
+    handleServer = (e) => {
+        e.preventDefault() 
+        Axios.get("http://127.0.0.1:8000")
+        .then((response) => {
+        })
+        .catch((err) => {
+            alert("Shifthing to 80000")
+            window.location.port ="8000"            
+        })
     }
     render() {
         return (
@@ -56,12 +63,17 @@ export default class FilteredUser extends Component {
                 {
                     this.state.arr.map((e) =>{
                         return(
-                            <div>
-                                <h1><Link>{e.name }</Link></h1>
+                            <div className= "mt-5">
+                                <center>
+                                    <h1><Link to ={`/user_info/${e.id}`}>{e.name }</Link></h1>
+                                </center>
                             </div>
                         )
                     })
                 }
+                <center>
+                    <button onClick={this.handleServer}>Click here to chat</button>
+                </center>
             </div>
         )
     }

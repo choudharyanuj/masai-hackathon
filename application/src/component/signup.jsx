@@ -1,7 +1,33 @@
 import React from 'react'
 import { Form, Col, Button} from 'react-bootstrap';
 import { Link,Route } from "react-router-dom";
+import styled from "styled-components";
 import Axios from 'axios';
+import Dropdown, {
+    DropdownTrigger,
+    DropdownContent
+  } from "react-simple-dropdown";
+  
+  const List = styled.ul`
+    list-style-type: none;
+    padding: 0px 23px;
+  
+    li:hover {
+      color: grey;
+    }
+  `;
+  
+  const Title = styled.div`
+    color: lightgrey;
+    margin-bottom: 7px;
+    font-size: 14px;
+  `;
+  
+  const Container = styled.div`
+    position: absolute;
+    padding: 10px;
+
+  `;
 class Signup extends React.Component {
     constructor(props){
         // console.log(props)
@@ -134,11 +160,14 @@ class Signup extends React.Component {
                                     <option value = "Flask">Flask</option>
                                     <option value ="SQL">SQL</option>
                                 </Form.Control>
+                                <button type="button" class="btn btn-primary" onClick={this.handleSubmit} style={{height:"80px",width:"100px    "}}>Register</button>
+
                             </Form.Group>
                         </Form.Row>
-                        <Button onClick={this.handleSubmit}>Register</Button>
+                        <div style = {{marginTop:"6%"}}></div>
                       {/* <Button variant="danger" type="submit" onClick ={ () =>{this.props.history.push(`/Dashboardforindividual/${this.state.email})}`); this.signup()}}>Register</Button> */}
                     </Form>
+                    {/* <Button onClick={this.handleSubmit} style={{height: "100px", width:"100px"}} className= "btn btn-primary">Register</Button> */}
                 </center>
             </div>
         )
