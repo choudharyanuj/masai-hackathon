@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 
 export default class Dashboard extends Component {
     constructor(props) {
@@ -32,6 +33,8 @@ export default class Dashboard extends Component {
                             <h3>{this.props.user[0]["skill3"]}</h3>
                         </div>
                     </div>
+                    {/* <button><Link to ={`/update/${this.props.user[0]["id"]}`}>Update Your Data</Link></button> */}
+                    <button><Link to="/filtered_user">Ask Question</Link></button>
                 </center>
             </div>
         )

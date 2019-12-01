@@ -8,7 +8,7 @@ export default class Login extends Component {
     constructor(props){
         super(props);
         this.state = {
-            
+
         }
     }
     handleChange = (e) => {
@@ -40,7 +40,7 @@ export default class Login extends Component {
                 <div className="container-fluid login-bg" style={{height : "80vh"}}>
                     <center>
                         <Form className="w-25 mt-5 gradient-bg-login text-dark" style={{borderRadius : "20px"}} > 
-                            <Image src="loginimg.jpg" style={{height: "100px", width: "100px"}} roundedCircle />  
+                            {/* <Image src="loginimg.jpg" style={{height: "100px", width: "100px"}} roundedCircle />   */}
                             <Form.Group  controlId="formBasicEmail" >
                                     <Form.Label>Username</Form.Label>
                                     <Form.Control className="text-dark " type="email" placeholder="Enter Username" style={{backgroundColor: "rgba(0,0,0,0.1)"}} name = "email" onChange={this.handleChange} />

@@ -5,3 +5,5 @@ id,name,user_name,email,password,gender,skill1,skill2,skill3
 4,Surajjha,school,suraj@masai.com,12345,Feale,Bootstrap,React,Python
 5,Nrupu Dev,NrupulD,nrupul@masai.com,123456,male,CSS,Bootstrap,JavaScript
 6,Prateek,prateekCEO,prateek@masai.com,123456,male,React,Python,Flask
+7,Full Name,FullName,full@masai.com,123456,male,ES6,Python,Flask
+8,Yogessh Bhatt,Yogesh,yogesh@masai.com,123456,male,Flask,SQL,ES6

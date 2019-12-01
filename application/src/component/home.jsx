@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Navigation from './nav.jsx'
 import Carousel from 'react-bootstrap/Carousel'
+import { Link,Route } from "react-router-dom";
 import Image from 'react-bootstrap/Image'
 export default class Home extends Component {
     render() {
@@ -50,7 +51,7 @@ export default class Home extends Component {
                  </div>
                  <div style={{backgroundColor:"black"}} className="text-light ml-4 mr-4">
                     <h1>It takes a world-class team to build a world-class product.</h1>
-                    <button className="btn btn-success">Join Us</button>
+                    <Link to="/login"><button className="btn btn-success">Join Us</button></Link>
                  </div>
             </div>
         )

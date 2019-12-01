@@ -21,17 +21,6 @@ def write_users_csv(user_data):
         writer.writeheader()
         for j in range(len(user_data)):
             writer.writerow({'id': user_data[j]["id"],"name": user_data[j]["name"],'email':user_data[j]["email"],'user_name':user_data[j]["user_name"],"password":user_data[j]["password"],'gender':user_data[j]["gender"],'skill1':user_data[j]["skill1"],'skill2':user_data[j]['skill2'],'skill3':user_data[j]['skill3']})
-    
-# @app.route('/home')
-# def show_users():
-#     read_users_csv()
-#     global total_details
-#     total_details = []
-#     for i in user_data:
-#         for j in users_address:
-#             if i["id"] == j["user_id"]:
-#                 total_details.append({"id": i["id"], "user_id": j["user_id"], "name": i["name"],"mobile": i["mobile"], "email": i["email"], "line_1": j["line_1"], "city": j["city"], "pincode":j["pincode"]})
-#     return json.dumps(total_details)
 
 @app.route('/create', methods=['POST'])
 def create_users():
@@ -82,6 +71,29 @@ def edit_user(id):
             arr.append({"id":user_list[i]["id"],"name":user_list[i]["name"],"email":user_list[i]["email"],"user_name":user_list[i]["user_name"],"password":user_list[i]["password"],"gender":user_list[i]["gender"],"skill1":user_list[i]["skill1"],"skill2":user_list[i]["skill2"],"skill3":user_list[i]["skill3"]})
     write_users_csv(arr)
     return json.dumps("Details Modified Successfully")
+
+@app.route('/news_feed', methods=['POST'])
+def news_feed():
+    available_user= list()
+    available_user = read_users_csv()
+    arr = list()
+    skill = request.json["skill"]
+    for i in range(len(available_user)):
+        if str(available_user[i]["skill1"])== str(skill) or str(available_user[i]["skill2"]) == str(skill) or str(available_user[i]["skill3"]) == str(skill):
+            arr.append({"id":available_user[i]["id"],"name":available_user[i]["name"],"user_name":available_user[i]["user_name"],"email":available_user[i]["email"],"password":available_user[i]["password"],"gender":available_user[i]["gender"],"skill1":available_user[i]["skill1"],'skill2':available_user[i]["skill2"],'skill3':available_user[i]["skill3"]})
+        # else:
+        #     arr.append({"id":available_user[i]["id"],"name":available_user[i]["name"],"email":available_user[i]["email"],"user_name":available_user[i]["user_name"],"password":available_user[i]["password"],"gender":available_user[i]["gender"],"skill1":available_user[i]["skill1"],"skill2":available_user[i]["skill2"],"skill3":available_user[i]["skill3"]})
+    # write_users_csv(arr)
+    return json.dumps(arr)
+
+@app.route('/show/<int:id>',methods = ['GET'])
+def show_user(id):
+    read_users_csv()
+    personal_data = []
+    for i in user_data:
+        if i["id"] == str(id):
+            personal_data.append({"id":i["id"],"name":i["name"],"user_name":i["user_name"],"email":i["email"],"gender":i["gender"],"password":i["password"],"skill1":i["skill1"],"skill2":i["skill2"],"skill3":i["skill3"]})
+    return json.dumps(personal_data)
 
 if __name__ == "__main__":
     app.run(debug = True)

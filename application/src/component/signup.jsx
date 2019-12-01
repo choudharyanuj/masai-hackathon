@@ -41,6 +41,7 @@ class Signup extends React.Component {
         Axios.post("http://127.0.0.1:5000/create", userData)
             .then((response) => {
                 alert("User Registerd Successfully")
+                window.location.href="/login"
             })
             .catch((err) => alert(err))
     }
@@ -85,6 +86,7 @@ class Signup extends React.Component {
                             <Form.Group as={Col} controlId="formGridEmail">
                                 <Form.Label className="float-left">Skill1</Form.Label>
                                 <Form.Control as="select" value= {this.state.skill1} name="skill1" onChange={this.handleChange}>
+                                    <option>Select</option>
                                     <option value="HTML">HTML</option>
                                     <option value = "CSS">CSS</option>
                                     <option value ="JavaScript">JavaScript</option>
@@ -102,6 +104,7 @@ class Signup extends React.Component {
                             <Form.Group as={Col} controlId="formGridEmail">
                                 <Form.Label className="float-left">Skill2</Form.Label>
                                 <Form.Control as="select" value= {this.state.skill2} name="skill2" onChange={this.handleChange}>
+                                    <option>Select</option>
                                     <option value="HTML">HTML</option>
                                     <option value = "CSS">CSS</option>
                                     <option value ="JavaScript">JavaScript</option>
@@ -119,6 +122,7 @@ class Signup extends React.Component {
                             <Form.Group as={Col} controlId="formGridEmail">
                                 <Form.Label className="float-left">Skill3</Form.Label>
                                 <Form.Control as="select" value= {this.state.skill3} name="skill3" onChange={this.handleChange}>
+                                    <option>Select</option>
                                     <option value="HTML">HTML</option>
                                     <option value = "CSS">CSS</option>
                                     <option value ="JavaScript">JavaScript</option>

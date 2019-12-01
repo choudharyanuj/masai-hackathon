@@ -4,8 +4,10 @@ import './App.css';
 import Home from './component/home.jsx'
 import Login from './component/login.jsx'
 import Signup from './component/signup.jsx'
+import Edit from './component/edit.jsx'
 import { BrowserRouter,Route } from "react-router-dom";
 import Dashboard from './component/dashboard.jsx';
+import FilteredUser from './component/filtered_user';
 
 class App extends React.Component {
   constructor(props) {
@@ -31,6 +33,8 @@ class App extends React.Component {
         <Route path ="/login"  render = {props =>  <Login getUser={this.getUser} {...props} />}/>
         <Route path="/signup"  component={Signup}/>
         {this.state.flag ? <Route path = "/dashboard" render = {props => <Dashboard user={this.state.user} {...props}/> }/> : null}
+        <Route path="/update/<int:id>" component={Edit}/>
+        <Route path="/filtered_user" component={FilteredUser}/>
       </div>
     );
   }
